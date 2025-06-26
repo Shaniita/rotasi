@@ -1,0 +1,14 @@
+<button onclick="startRotasi()">Start Rotasi</button>
+
+<script>
+function startRotasi() {
+  fetch('http://192.168.1.50:3000/start-rotasi', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({})
+  })
+  .then(res => res.json())
+  .then(data => alert(data.message))
+  .catch(err => alert('Gagal memulai rotasi'));
+}
+</script>
